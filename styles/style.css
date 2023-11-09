@@ -1,0 +1,362 @@
+:root {
+    --color-nav: rgb(33, 37, 41);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+nav {
+    background-color: rgb(33, 37, 41);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    height: 10vh;
+}
+
+.main-conteiner {
+    height: 85vh;
+}
+
+h1 {
+    margin-inline: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    margin-inline: 1rem;
+    color: white;
+    font-size: 1.6rem;
+}
+
+main {
+    font-size: 1.6rem;
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    height: 100%;
+}
+
+main .main-ingreso {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid var(--color-nav);
+}
+
+main .main-ingreso .main-ingreso-container {
+    margin-top: 4rem;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 2rem;
+    gap: 1rem;
+    border-radius: 2rem;
+    border: 2px solid var(--color-nav);
+    height: 80%;
+}
+
+main .main-ingreso .main-ingreso-container h2 {
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+main .main-ingreso .main-ingreso-container .main-ingreso-form {
+    width: 90%;
+}
+
+main .main-ingreso .main-ingreso-container .main-ingreso-form h3 {
+    margin-top: 5rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+main .main-ingreso .main-ingreso-container .main-ingreso-form .main-list-container {
+    width: 100%;
+}
+main .main-ingreso .main-ingreso-container .main-ingreso-form .main-list-container select {
+    width: 100%;
+    margin-block: 4rem;
+}
+
+main .main-ingreso .main-ingreso-container .main-ingreso-form .main-button-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+main .main-ingreso .main-ingreso-container .main-ingreso-form .main-button-container button {
+    width: 15rem;
+    margin-top: 4rem;
+    font-size: 1.6rem;
+}
+
+main .main-salida {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .main-salida .main-salida-container {
+    margin-top: 4rem;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 2rem;
+    gap: 1rem;
+    border-radius: 2rem;
+    border: 2px solid var(--color-nav);
+    height: 50%;
+}
+
+main .main-salida .main-salida-container h2 {
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+main .main-salida .main-salida-container .main-salida-form button {
+    width: 15rem;
+    margin-top: 4rem;
+    font-size: 1.6rem;
+}
+
+/******************************* REGISTRAR INGRESO ************************/
+body .menu-agregar-placa-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    padding: 1rem;
+    background-color: white;
+    border: 2px solid var(--color-nav);
+    border-radius: 2rem;
+}
+
+body .menu-agregar-placa-container.desactive {
+    display: none;
+}
+
+body .menu-agregar-placa-container .btn-container {
+    display: flex;
+    justify-content: right;
+}
+
+body .menu-agregar-placa-container .titulo-container h3 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+body .menu-agregar-placa-container form {
+    font-size: 1.6rem;
+    width: 30rem;
+    padding: 1rem;
+}
+body .menu-agregar-placa-container form div .label-titulo {
+    font-weight: bold;
+}
+
+body .menu-agregar-placa-container form div div .label-info {
+    text-align: center;
+}
+
+body .menu-agregar-placa-container form div input {
+    font-size: 1.6rem;
+} 
+
+body .menu-agregar-placa-container form div select {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+}
+
+body .menu-agregar-placa-container form div button {
+    margin-top: 1rem;
+    width: 20rem;
+    margin-inline: auto;
+    font-size: 1.6rem;
+}
+
+/******************************* REGISTRA SALIDA ************************/
+body .menu-registrar-salida {
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    background-color: white;
+    border: 2px solid var(--color-nav);
+    border-radius: 2rem;
+}
+
+body .menu-registrar-salida.desactive {
+   display: none;
+}
+
+body .menu-registrar-salida .btn-container {
+    display: flex;
+    justify-content: right;
+}
+
+body .menu-registrar-salida .titulo-container h3 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+body .menu-registrar-salida form {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+
+body .menu-registrar-salida form .seccion-buscar {
+    width: 30%;
+    display: grid;
+    grid-template-columns: 9fr 3fr;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+body .menu-registrar-salida form div .label-titulo {
+    font-weight: bold;
+}
+
+body .menu-registrar-salida form div input {
+    font-size: 1.6rem;
+}
+
+body .menu-registrar-salida form .seccion-datos-parking {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    border: 2px solid var(--color-nav);
+}
+
+body .menu-registrar-salida form .seccion-calcular-pago {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 2px solid var(--color-nav);
+}
+
+/******************* TICKET INGRESO ***************************************/
+body .ticket-ingreso {
+    max-width: 30rem;
+    font-size: 1.2rem;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    border: 2px solid var(--color-nav);
+}
+
+body .ticket-ingreso.desactive {
+    display: none;
+}
+
+body .ticket-ingreso .id-ticket-ingreso {
+    text-align: right;
+}
+
+body .ticket-ingreso .contenedor-logo img {
+    width: 28rem;
+}
+
+body .ticket-ingreso .contenedor-ticket-ingreso {
+    display: flex;
+    flex-direction: column;
+}
+
+body .ticket-ingreso .contenedor-ticket-ingreso .contenedor-puerta-fecha {
+    display: flex;
+    justify-content: space-around;
+}
+
+body .ticket-ingreso .contenedor-ticket-ingreso .contenedor-puerta-fecha .puerta-ingreso-ticket {
+    font-weight: bold;
+}
+
+body .ticket-ingreso .contenedor-ticket-ingreso .contenedor-linea-ticket {
+    display: flex;
+    justify-content: space-around;
+}
+
+body .ticket-ingreso .contenedor-ticket-ingreso h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+/************************** TICKET SALIDA ***********************************/
+body .ticket-salida {
+    max-width: 30rem;
+    font-size: 1.2rem;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    border: 2px solid var(--color-nav);
+}
+
+body .ticket-salida.desactive {
+    display: none;
+}
+
+body .ticket-salida .id-ticket-ingreso {
+    text-align: right;
+}
+
+body .ticket-salida .contenedor-logo img {
+    width: 28rem;
+}
+
+body .ticket-salida .contenedor-ticket-ingreso {
+    display: flex;
+    flex-direction: column;
+}
+
+body .ticket-salida .contenedor-ticket-ingreso .contenedor-puerta-fecha {
+    display: flex;
+    justify-content: space-around;
+}
+
+body .ticket-salida .contenedor-ticket-ingreso .contenedor-puerta-fecha .puerta-ingreso-ticket {
+    font-weight: bold;
+}
+
+body .ticket-salida .contenedor-ticket-ingreso .contenedor-linea-ticket {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 1rem;
+}
+
+body .ticket-salida .contenedor-ticket-ingreso .contenedor-linea-ticket p {
+    text-align: left;
+}
+
+body .ticket-salida .contenedor-ticket-ingreso h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+}

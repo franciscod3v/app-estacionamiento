@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registros - Estacionamiento Mercado Unicachi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/registros.css">
+</head>
+
+<body>
+    <nav>
+        <h1><a href="./index.html">Control Estacionamiento</a></h1>
+        <button id="btn-generar-reporte" type="button" class="btn btn-primary btn-generar-reporte">Generar Reporte</button>
+    </nav>
+    <table id="tabla" class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Placa</th>
+                <th scope="col">Puerta de Ingreso</th>
+                <th scope="col">Tipo de Servicio</th>
+                <th scope="col">Tipo de Vehículo</th>
+                <th scope="col">Ingreso</th>
+                <th scope="col">Puerta de Salida</th>
+                <th scope="col">Salida</th>
+                <th scope="col">Ticket Perdido</th>
+                <th scope="col">Descarga</th>
+                <th scope="col">Tiempo en Estacionamiento</th>
+                <th scope="col">Total a Pagar</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-body">
+        </tbody>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script type="module" src="./scripts/reportes.js"></script>
+    
+</body>
+
+</html>

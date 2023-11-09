@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Estacionamiento Mercado Unicachi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav>
+        <h1>Control Estacionamiento</h1>
+        <a href="registros.html">Registros</a>
+    </nav>
+    <div class="main-conteiner">
+        <main>
+            <div class="main-ingreso">
+                <div class="main-ingreso-container">
+                    <h2>REGISTRAR INGRESO</h2>
+                    <div class="main-ingreso-form">
+                        <h3>Puerta Predeterminada</h3>
+                        <div class="main-list-container">
+                            <select id="puerta-ingreso">
+                                <!-- Cada opción se define con la etiqueta option -->
+                                <option value="Escoge puerta por defecto">Escoge puerta por defecto</option>
+                                <option value="1">1</option>
+                                <option value="7">7</option>
+                            </select>
+                        </div>
+                        <div class="main-button-container">
+                            <button id="btn-parking" class="btn btn-primary">Parking</button>
+                            <button id="btn-cochera" class="btn btn-primary">Cochera</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="main-salida">
+                <div class="main-salida-container">
+                    <h2>REGISTRAR SALIDA</h2>
+                    <div class="main-salida-form">
+                        <button id="btn-salida" class="btn btn-primary">Salida</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!------------------------------Registrar ingreso-------------------->
+    <div class="menu-agregar-placa-container desactive" id="menu-agregar-registro">
+        <div class="btn-container">
+            <button id="btn-cerrar-ingreso" class="btn btn-danger">X</button>
+        </div>
+        <div class="titulo-container">
+            <h3>Cuadro de Registro</h3>
+        </div>
+        <form>
+            <div class="mb-3">
+                <div>
+                    <label for="label-puerta-ingreso" class="form-label label-titulo">Puerta</label>
+                    <p id="label-puerta-ingreso" class="label-info">-</p>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div>
+                    <label for="label-servicio" class="form-label label-titulo">Servicio</label>
+                    <p id="label-servicio" class="label-info">-</p>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="input-placa" class="form-label label-titulo">Placa</label>
+                <input type="text" class="form-control" id="input-placa">
+                <div class="form-text">El campo es obligatorio.</div>
+            </div>
+            <div class="mb-3">
+                <label for="select-vehiculo" class="form-label label-titulo">Tipo de vehículo</label>
+                <select id="select-vehiculo" class="form-select" aria-label="Default select example">
+                    <option selected>Escoge tipo de vehículo</option>
+                    <option value="Moto Líneal">Moto lineal</option>
+                    <option value="Carreta">Carreta</option>
+                    <option value="Mototaxi">Mototaxi</option>
+                    <option value="Autos">Autos</option>
+                    <option value="Camioneta">Camioneta</option>
+                    <option value="Minivan">Minivan</option>
+                    <option value="Combis">Combis</option>
+                    <option value="Furgón pequeño">Furgón pequeño</option>
+                    <option value="Furgón mediano">Furgón mediano</option>
+                    <option value="Furgón grande">Furgón grande</option>
+                    <option value="Camión">Camión</option>
+                    <option value="Trailer">Trailer</option>
+                </select>
+            </div>
+            <div class="btn-container">
+                <button id="btn-registrar" type="button" class="btn btn-primary">Registrar Ingreso</button>
+            </div>
+        </form>
+    </div>
+    <!------------------------------Registrar salida-------------------->
+    <div id="menu-registrar-salida" class="menu-registrar-salida desactive">
+        <div class="btn-container">
+            <button id="btn-cerrar-salida" class="btn btn-danger">X</button>
+        </div>
+        <div class="titulo-container">
+            <h3>Cuadro de Salida</h3>
+        </div>
+        <form>
+            <div class="mb-3 seccion-buscar">
+                <input type="text" class="form-control" id="input-placa-salida" placeholder="Ingresa Placa aquí">
+                <button type="button" id="btn-buscar" class="btn btn-primary">Buscar</button>
+            </div>
+            <div class="seccion-datos-parking">
+                <div class="mb-3">
+                    <div>
+                        <label for="id-servicio" class="form-label label-titulo">Id Registro</label>
+                        <p id="id-servicio-salida" class="label-info">-</p>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div>
+                        <label for="servicio-solicitado" class="form-label label-titulo">Servicio</label>
+                        <p id="servicio-solicitado-salida" class=" label-info">-</p>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div>
+                        <label for="puerta-ingreso" class="form-label label-titulo">Puerta Ingreso</label>
+                        <p id="puerta-ingreso-salida" class="label-info">-</p>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div>
+                        <label for="label-vehiculo" class="form-label label-titulo">Vehículo</label>
+                        <p id="label-vehiculo-salida" class="label-info">-</p>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div>
+                        <label for="label-hora-ingreso" class="form-label label-titulo">Hora Ingreso</label>
+                        <p id="label-hora-ingreso-salida" class="label-info">-</p>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div>
+                        <label for="puerta-salida" class="form-label label-titulo">Puerta Salida</label>
+                        <p id="puerta-salida" class="label-info">-</p>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div>
+                        <label for="label-hora-salida" class="form-label label-titulo">Hora Salida</label>
+                        <p id="label-hora-salida" class="label-info">-</p>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div>
+                        <label for="label-tiempo-parqueo" class="form-label label-titulo">Tiempo en parqueo</label>
+                        <p id="label-tiempo-parqueo" class="label-info">-</p>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div>
+                        <label for="label-tickets-perdidos" class="form-label label-titulo">Tickets perdidos</label>
+                        <p id="label-tickets-perdidos" class="label-info">-</p>
+                    </div>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="perdio-ticket">
+                    <label class="form-check-label" for="perdio-ticket">
+                        ¿Perdió ticket?
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="realizo-descarga">
+                    <label class="form-check-label" for="realizo-descarga">
+                        ¿Realizó descarga?
+                    </label>
+                </div>
+            </div>
+            <div class="mb-3 seccion-calcular-pago">
+                <button type="button" id="btn-calcular" class="btn btn-secondary">Calcular Pago</button>
+                <div class="mb-3">
+                    <div>
+                        <label for="label-tickets-perdidos" class="form-label label-titulo">Importe a pagar</label>
+                        <p id="label-pago-final" class="label-info">-</p>
+                    </div>
+                </div>
+                <button type="button" id="btn-pagar" class="btn btn-primary">Pagar</button>
+            </div>
+        </form>
+    </div>
+    <!-------------------------------Ticket Ingreso ------------------------------>
+    <div id="ticket-ingreso" class="ticket-ingreso desactive">
+        <p id="id-ticket-ingreso" class="id-ticket-ingreso">1</p>
+        <div class="contenedor-logo">
+            <img src="./assets/logo-unicachi.png" alt="logo de Unicachi">
+        </div>
+        <div class="contenedor-ticket-ingreso">
+            <div class="contenedor-puerta-fecha">
+                <p id="puerta-ingreso-ticket" class="puerta-ingreso-ticket">Puerta 1</p>
+                <p id="fecha-ingreso-ticket" class="fecha-ingreso-ticket">-</p>
+            </div>
+            <h3>2 HORAS LIBRES DE PARQUEO POR CONSUMO</h3>
+            <div class="contenedor-linea-ticket">
+                <p>Placa:</p>
+                <p id="placa-ticket-ingreso">-</p>
+            </div>
+            <div class="contenedor-linea-ticket">
+                <p>Ingreso:</p>
+                <p id="hora-ticket-ingreso">23/10/2023 12:34:09</p>
+            </div>
+            <div class="contenedor-linea-ticket">
+                <p>INGRESO</p>
+                <p id="servicio-ticket-ingreso">Cochera</p>
+            </div>
+            <h3>*PENALIDAD POR PERDIDA DE TICKET: S/25</h3>
+            <h3>*DEJE BIEN ASEGURADO SU VEHICULO</h3>
+            <h3>TODO PAGO ES EN EFECTIVO</h3>
+        </div>
+    </div>
+    <!--Ticket Salida-->
+    <div id="ticket-salida" class="ticket-salida desactive">
+        <p id="id-ticket-salida" class="id-ticket-ingreso">-</p>
+        <div class="contenedor-logo">
+            <img src="./assets/logo-unicachi.png" alt="logo de Unicachi">
+        </div>
+        <div class="contenedor-ticket-ingreso">
+            <div class="contenedor-puerta-fecha">
+                <p id="puerta-ingreso-ticket-salida" class="puerta-ingreso-ticket">-</p>
+                <p id="fecha-ingreso-ticket-salida" class="fecha-ingreso-ticket">-</p>
+            </div>
+            <h3>2 HORAS LIBRES DE PARQUEO POR CONSUMO</h3>
+            <div class="contenedor-linea-ticket">
+                <p>Placa:</p>
+                <p id="placa-ticket-ingreso-salida">-</p>
+            </div>
+            <div class="contenedor-linea-ticket">
+                <p>Ingreso:</p>
+                <p id="hora-ticket-ingreso-salida">-</p>
+            </div>
+            <div class="contenedor-linea-ticket">
+                <p>Salida:</p>
+                <p id="hora-ticket-salida">-</p>
+            </div>
+            <div class="contenedor-linea-ticket">
+                <p>Tiempo:</p>
+                <p id="ticket-tiempo-parqueo">-</p>
+            </div>
+            <div class="contenedor-linea-ticket">
+                <p>Pago:</p>
+                <p id="ticket-pago">-</p>
+            </div>
+            <div class="contenedor-linea-ticket">
+                <p>INGRESO</p>
+                <p id="servicio-ticket-salida">Cochera</p>
+            </div>
+            <h3>*PENALIDAD POR PERDIDA DE TICKET: S/25</h3>
+            <h3>*DEJE BIEN ASEGURADO SU VEHICULO</h3>
+            <h3>TODO PAGO ES EN EFECTIVO</h3>
+        </div>
+    </div>
+    <script type="module" src="./scripts/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
